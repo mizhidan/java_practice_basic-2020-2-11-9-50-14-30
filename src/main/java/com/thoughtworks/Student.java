@@ -10,6 +10,10 @@ public class Student {
     private String id;
     private String enrollDate;
 
+    public Student() {
+
+    }
+
     public Student(String name,String id,String enrollDate) {
         this.name = name;
         this.id = id;
@@ -48,8 +52,7 @@ public class Student {
         Date currentTime = new Date();
         String enrollSchoolYear = enrollDate.split("\\.")[0];
         DateFormat currentDate = new SimpleDateFormat("yyyy");
-        int inSchoolYear = Integer.parseInt(currentDate.format(currentTime)) - Integer.parseInt(enrollSchoolYear);
-        return inSchoolYear;
+        return Integer.parseInt(currentDate.format(currentTime)) - Integer.parseInt(enrollSchoolYear);
     }
 
     public Boolean isEquals(Student o) {
